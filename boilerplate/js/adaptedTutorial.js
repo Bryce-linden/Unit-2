@@ -1,12 +1,12 @@
-
-
+/* Map of GeoJSON data from MegaCities.geojson */
+//declare map var in global scope
 var map;
 //function to instantiate the Leaflet map
 function createMap(){
-    //create the map, center the map over wisconsin as this is the location of the data. Zoom level to 7 to fit properly
+    //create the map
     map = L.map('map', {
-        center: [44.363103, -89.41091],
-        zoom: 7
+        center: [20, 0],
+        zoom: 2
     });
 
     //add OSM base tilelayer
@@ -14,11 +14,11 @@ function createMap(){
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
     }).addTo(map);
 
-    //call getData function
+    //call getData function that is created below
     getData();
 };
 
-//This function is what gets the list from the geojson file to appear when you click on each point
+
 function onEachFeature(feature, layer) {
     //no property named popupContent; instead, create html string with all properties
     var popupContent = "";
@@ -32,17 +32,17 @@ function onEachFeature(feature, layer) {
 };
 
 
-//function to retrieve the data and place it on the map. This uses the same fetch response that we learned from last activity
+//function to retrieve the data and place it on the map. Make sure that the parenthesis are empty
 function getData(){
     //load the data
-    fetch("data/whereMilk.geojson")
+    fetch("data/MegaCities.geojson")
         .then(function(response){
             return response.json();
         })
         
          //Example 2.3 load the data    
          .then(function(json){            
-            //create marker options, colors, style
+            //create marker options
             var geojsonMarkerOptions = {
                 radius: 8,
                 fillColor: "#ff7800",
@@ -51,8 +51,7 @@ function getData(){
                 opacity: 1,
                 fillOpacity: 0.8
             };
-            //create a Leaflet GeoJSON layer and add it to the map.
-            // very important to call the function 'onEachFeature' down below. This ensures that the function will actually work
+            //create a Leaflet GeoJSON layer and add it to the map. Make sure to call the onEachFeature function under L.geoJson
             L.geoJson(json, {
                 onEachFeature: onEachFeature,
                 pointToLayer: function (feature, latlng){
@@ -61,5 +60,5 @@ function getData(){
             }).addTo(map);
         });
 };
-
+//This is one way to get the map to appear on the screen
 document.addEventListener('DOMContentLoaded',createMap)
