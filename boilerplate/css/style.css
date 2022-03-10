@@ -1,48 +1,155 @@
-/*Add CSS styles here*/
+/*color scheme focuses on the colors of a cow. They are black, white, brown, and pink for the nose*/
+h1 {
+	font-family: 'Moo Lah Lah', cursive;
+	color: rgb(77, 20, 20);
+	font-size: 70px;
+	
+}
+
+h2 {
+	font-family: 'Sansita Swashed', cursive;
+}
+body{
+	font-family: 'Sansita Swashed', cursive;
+	size: 50px;
+}
 
 
+p {
+	font-family: 'Sansita Swashed', cursive;
+}
+
+ /*style title div class*/
+#title {
+	padding: 10px;
+}
+
+ /*style mapid div class*/
+#mapid { 
+	height: 550px;
+	width: 100%;
+	display: inline-block; 
+}
+
+ /*style textid div class*/
+#textid {
+	width: 95%;
+	height: 550px;
+	overflow: scroll;
+}
+
+ /*remove scrollbar visibility*/
+::-webkit-scrollbar {
+	display: none;
+}
+
+ /*style popup box*/
+.leaflet-popup-content-wrapper {
+	background: #D464A4;  
+}
 
 .leaflet-popup-content p {
     margin: 0.2em 0;
 }
 
-#map {    
-    height: 400px;    
-    width: 80%;
-    display: inline-block;
+ /*style sequence box*/
+.sequence-control-container {  
+    width: 300px;  
+    height: 70px;  
+    background-color: #734343;  /*controls color of slider background*/  
+    padding: 10px;  
+    line-height: 45px;  
+    text-align: center;  
+    border: rgb(175, 119, 41) 1px;  
+} 
+
+ /*style range ranger*/
+.range-slider {
+	width: 175px;
+	fill: #D42C04;  
+	height: 5px;
+	-webkit-appearance: none;
+	background: white;
 }
 
- 
+ /*style range slider button*/
+.range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #161811; 
+}
 
-#panel {  
-        width: 25%;  
-        padding: 20px;  
-        display: inline-block;  
-        vertical-align: top;  
-        text-align: center;  
-        line-height: 42px;  
-    }  
-    
-    .range-slider {  
-        width: 55%;
-        display: inline-block;
-        vertical-align: 40%;
-        text-align:center;
-        line-height: 42px;  
-    }  
-    
-    .step {  
-        width: 20%;  
-    }  
-    
-    .step img {  
-        width: 100%;  
-    }  
+ /*style step buttons on slider*/
+.step {
+	width: 40px;
+}
+
+.step img {
+	width: 100%;
+	height: auto;
+}
 
 #forward {
-        float: right;
+	float: right;
+	background-color: #D464A4;  /*based on a cow's nose*/
 }
 
-#reverse {  
-    float: left;  
+#reverse {
+	float: left;
+	background-color: #D464A4;  
+}
+
+ /*override legend style for attributes*/
+#max-text,
+#mean-text,
+#min-text,
+#zero-text {
+	fill: rgb(255, 255, 255);
+	font-weight: normal;
+	font-family: 'Sansita Swashed', cursive;
+	font-size: 11px;
+}
+
+#max.legend-circle,
+#mean.legend-circle,
+#min.legend-circle,
+#zero.legend-circle {
+	fill: #D464A4;
+}
+
+ /*style the legend*/
+.legend-control-container {
+    width: 160px;
+    height: 90px;
+    font-weight: bold;
+    color: white;
+    background-color: #734343;   /* background color of legend*/
+    padding: 10px;
+    text-align: center;
+    border: solid orange 1px;
+    font-family: 'Geneva', sans-serif;
+    font-size: 11px;
+}
+
+.legend-control-container p{
+     margin: 0;
+}
+
+
+
+ /*color links*/
+a {
+	color: #D464A4;  /*used to match the cow's nose color and follow the general basic color scheme*/
+}
+
+ /*color links on hover*/
+a:hover {
+	color: #D42C04;  
+}
+
+ /*style breaks*/
+br:after {
+	margin-bottom: 10px !important;
 }

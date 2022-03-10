@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -5,31 +6,64 @@
         <meta name="viewport" content="width=device-width">
             <title></title>
 
-        <!--put your external stylesheet links here-->
-        <link rel="stylesheet" href="css/style.css">
+        <!--external stylesheet links-->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="lib/leaflet.css">
-
-        
-        <!--[if IE<9]>
-            <link rel="stylesheet" href="css/style.ie.css">
-        <![endif]-->
-
+        <link rel="stylesheet" href="css/style.css">
          <!--you can also place internal styles here;
              place these within <style> tags-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Moo+Lah+Lah&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@500&display=swap" rel="stylesheet">
         
     </head>
 
     <body>
         <!--put your initial page content here-->
-        <div id="map"></div>
-        
-        <div id="panel"></div>
-        <!--you can also use this space for internal scripts;
-        place these within <script> tags-->
+        <div class="row">
+            <!--title-->
+            <div class="col-md-12">
+                <div id="title">
+                <center><h1>Wisconsin Cows</h1></center>
+                <center><h3>Bryce Linden </h3></center>
+            </div>
+        </div>
+    </div>
+    <!--map, using boostrap to make mobile friendly-->
+        <div class="row">
+        <div class="col-md-8">
+		  <div id="mapid"></div>
+            </div>
+    <!--supplementary text to inform narrative-->
+        <div class="col-md-4">
+		  <div id="textid"> 
+            <h2>The Problem</h2>
+            <p>America's dairy industry is struggling with Wisconsin farmers especially feeling the heat. In 2018, over 2700 dairy farms closed in the US with over a third in Wisconsin. As more young people move away from the farming livestyle, the future of dairy in Wisconsin is threatened. </p>
+            <h2>The History</h2>
+            <p>Wisconsin's love affair with dairy began at the end of the 19th century when soil exhaustion from wheat farming pushed farmers to try dairy. By the turn of the century, nearly 90% of farms had switched to dairy.</p>
+            <h2>The Data</h2>
+
+            
+            <p>All data in this map comes from the US Department of Agriculture survey for Wisconsin. The data covers 30 years of Wisconsin's dairy history with data collected in 5 year intervals. The 15 counties selected represent the counties where most dairy cows can be found. Currently, Clark county in the northwest leads the way with over 66,000 head, outnumbering people over 2 to 1.</p>
+
+            
+            <p><em>Keep scrolling to read more about Wisconsin's dairy industry, or click through the map to experience its decline over the last 3 decades.</em></p>
+            <h2>More information</h2>
+            
+            <p>Hear from Wisconsin dairy farmers themselves <a href="https://www.youtube.com/watch?v=xIRw2VVKlK4">here</a>, and learn about how they are working together to continue the industry <a href ='https://www.wisconsindairy.org/'>here. </a></p>
+ 
+            <h4>Data Sources:</h4>
+            <p><a href="https://www.wisconsinhistory.org/Records/Article/CS1744">The Wisconsin Historical Society</a> </p>
+            <p><a href="https://agcensus.library.cornell.edu/">USDA Agricultural Census</a> </p>
+            <p><a href="https://www.youtube.com/watch?v=xIRw2VVKlK4">PBS Newshour</a> </p>
+          </div>
+            </div>
+        </div>
 
         <!--put your external script links here-->
-        <script type="text/javascript" src="./lib/leaflet-src.js"></script>
-        <script type="text/javascript" src="js/main.js"></script>
         
+        <script type="text/javascript" src="lib/leaflet-src.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
     </body>
 </html>
